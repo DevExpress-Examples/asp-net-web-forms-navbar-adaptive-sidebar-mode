@@ -1,7 +1,7 @@
 # How to implement Adaptive SideBar mode for Navigation Bar
 
 
-ASPxNavBar doesn't provide this feature at the moment. As a workaround, you can use ASPxPanel and ASPxMenu. The main steps to implement such a workaround are:<br><br>1. Place ASPxMenu to the ExpandBarTemplate, allow the ASPxMenu Width to occupy 100% of a container. Wrap ASPxMenu to the div container, this will allow changing ASPxMenu width when the panel is expanded/collapsed. <br>
+ASPxNavBar doesn't provide this feature at the moment. Bu you can use ASPxPanel and ASPxMenu to create an adaptive accordion layout with a collapse button ("hamburger menu"). The main steps to implement such a workaround are:<br><br>1. Place ASPxMenu to the ExpandBarTemplate, allow the ASPxMenu Width to occupy 100% of a container. Wrap ASPxMenu to the div container, this will allow changing ASPxMenu width when the panel is expanded/collapsed. <br>
 
 
 ```aspx
