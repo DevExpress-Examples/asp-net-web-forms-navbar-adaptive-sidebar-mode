@@ -26,8 +26,8 @@ ASPxNavBar doesn't support adaptivity out-of-the-box, but you can use the [ASPxP
     position: relative;
     left: -50px;
     top: 20px;
-}```
-
+}
+```
 ```aspx
 <Styles>
     <ExpandBar CssClass="expandBar" />
