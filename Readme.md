@@ -1,8 +1,8 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [Default.aspx](./CS/WebApplication1/Default.aspx) (VB: [Default.aspx](./VB/WebApplication1/Default.aspx))
-* [Default.aspx.cs](./CS/WebApplication1/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebApplication1/Default.aspx.vb))
+* [Default.aspx](./CS/WebApplication1/DefaultForm.aspx) (VB: [Default.aspx](./VB/WebApplication1/DefaultForm.aspx))
+* [Default.aspx.cs](./CS/WebApplication1/DefaultForm.aspx.cs) (VB: [Default.aspx.vb](./VB/WebApplication1/DefaultForm.aspx.vb))
 <!-- default file list end -->
 # How to implement Adaptive SideBar mode for Navigation Bar
 <!-- run online -->
