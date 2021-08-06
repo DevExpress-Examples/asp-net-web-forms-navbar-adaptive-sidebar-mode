@@ -5,9 +5,6 @@
 * [Default.aspx.cs](./CS/WebApplication1/DefaultForm.aspx.cs) (VB: [Default.aspx.vb](./VB/WebApplication1/DefaultForm.aspx.vb))
 <!-- default file list end -->
 # How to implement Adaptive SideBar mode for Navigation Bar
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t499904/)**
-<!-- run online end -->
 
 
 ASPxNavBar doesn't support adaptivity out-of-the-box, but you can use the [ASPxPanel](https://docs.devexpress.com/AspNet/14778/components/site-navigation-and-layout/panel) control to create an adaptive accordion layout with a collapse button ("hamburger menu").<br><br>1. Place a collapsible panel into your page, set its [FixedPosition](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxCollapsiblePanel.FixedPosition) property to the Left and make the panel adaptive: 
