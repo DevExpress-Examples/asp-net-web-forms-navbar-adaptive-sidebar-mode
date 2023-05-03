@@ -1,28 +1,22 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128564500/20.1.4%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T499904)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
-<!-- default file list -->
-*Files to look at*: 
-
-* [Default.aspx](./CS/WebApplication1/Default.aspx) (VB: [Default.aspx](./VB/WebApplication1/DefaultForm.aspx))
-* [Default.aspx.cs](./CS/WebApplication1/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebApplication1/DefaultForm.aspx.vb))
-<!-- default file list end -->
-# How to implement Adaptive SideBar mode for Navigation Bar
+# Navigation Bar for ASP.NET Web Forms - How to implement the adaptive side bar functionality
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/t499904/)**
 <!-- run online end -->
 
+This example demonstrates how to use the [ASPxPanel](https://docs.devexpress.com/AspNet/14778/components/site-navigation-and-layout/panel) control to create an adaptive accordion layout with a collapse button.
 
-ASPxNavBar doesn't support adaptivity out-of-the-box, but you can use the [ASPxPanel](https://docs.devexpress.com/AspNet/14778/components/site-navigation-and-layout/panel) control to create an adaptive accordion layout with a collapse button ("hamburger menu").<br><br>1. Place a collapsible panel into your page, set its [FixedPosition](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxCollapsiblePanel.FixedPosition) property to the Left and make the panel adaptive: 
+## Overview
+
+Add a collapsible panel to the page, set its [FixedPosition](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxCollapsiblePanel.FixedPosition) property to `WindowLeft`, and specify the [SettingsAdaptivity](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxCollapsiblePanel.SettingsAdaptivity) property to make the panel adaptive.
 
 ```aspx
 <dx:ASPxPanel ID="LeftPanel" runat="server" FixedPosition="WindowLeft" Collapsible="true">
     <SettingsAdaptivity CollapseAtWindowInnerWidth="2000" />
 </dx:ASPxPanel>
 ```
-<br><br>2. Put the ASPxMenu control into to the **ExpandBarTemplate** and allow the ASPxMenu'width to occupy 100% of the panel. Adjust the menu's location and the panel's expand button using CSS. The menu will be shown when the panel is collapsed:
+
+Specify the panel's [ExpandBarTemplate](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxCollapsiblePanel.ExpandBarTemplate) property, add a menu control to the template, and use CSS classes to specify the menu's style settings. The menu is visible when the panel is collapsed.
+
 ```css
 .expandBar {
     width: 50px;
@@ -40,35 +34,16 @@ ASPxNavBar doesn't support adaptivity out-of-the-box, but you can use the [ASPxP
 <ExpandBarTemplate>
     <div id="container" class="collapsedMenu">
         <dx:ASPxMenu ID="ASPxMenu2" ClientInstanceName="menu" runat="server" Width="100%" BackColor="Transparent" Orientation="Vertical">
-            <Items>
-                <dx:MenuItem Name="item1" Text=" " DropDownMode="false">
-                    <Image IconID="actions_addfile_32x32">
-                    </Image>
-                </dx:MenuItem>
-                <dx:MenuItem Name="item2" Text=" ">
-                    <Image IconID="actions_apply_32x32">
-                    </Image>
-                </dx:MenuItem>
-                <dx:MenuItem Name="item3" Text=" ">
-                    <Image IconID="actions_about_32x32devav">
-                    </Image>
-                </dx:MenuItem>
-                <dx:MenuItem Name="item4" Text=" ">
-                    <Image IconID="actions_driving_32x32devav">
-                    </Image>
-                </dx:MenuItem>
-                <dx:MenuItem Name="item5" Text=" ">
-                    <Image IconID="actions_export_32x32devav">
-                    </Image>
-                </dx:MenuItem>
-            </Items>
+            <!-- ... -->
             <ItemStyle BackColor="Transparent" Border-BorderWidth="0px" Width="0px"></ItemStyle>
             <Border BorderStyle="None" />
         </dx:ASPxMenu>
     </div>
 </ExpandBarTemplate>
 ```
-<br><br>3. Put the ASPxNavBar control into the **ExpandedPanelTemplate**. The navbar will be shown when the panel is expanded. Manage the menu visibility using CSS:
+
+Specify the panel's [ExpandPanelTemplate](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxCollapsiblePanel.ExpandedPanelTemplate) property and add the [ASPxNavBar](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxNavBar) control to the template. When the panel is expanded, the navigation bar is shown and the menu is hidden.
+
 ```css
 .expandBarExpanded {
     width: 40px;
@@ -86,45 +61,13 @@ ASPxNavBar doesn't support adaptivity out-of-the-box, but you can use the [ASPxP
 ```aspx
 <ExpandedPanelTemplate>
     <dx:ASPxNavBar ID="nbMain" runat="server">
-        <Groups>
-            <dx:NavBarGroup Text="Parent 1" HeaderImage-IconID="actions_addfile_16x16">
-                <Items>
-                    <dx:NavBarItem Text="Child 1" NavigateUrl="javascript:void(4)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 2" NavigateUrl="javascript:void(5)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 3" NavigateUrl="javascript:void(6)"></dx:NavBarItem>
-                </Items>
-            </dx:NavBarGroup>
-            <dx:NavBarGroup Text="Parent 2" HeaderImage-IconID="actions_apply_16x16">
-                <Items>
-                    <dx:NavBarItem Text="Child 1" NavigateUrl="javascript:void(4)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 2" NavigateUrl="javascript:void(5)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 3" NavigateUrl="javascript:void(6)"></dx:NavBarItem>
-                </Items>
-            </dx:NavBarGroup>
-            <dx:NavBarGroup Text="Parent 3" HeaderImage-IconID="actions_about_16x16devav">
-                <Items>
-                    <dx:NavBarItem Text="Child 1" NavigateUrl="javascript:void(4)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 2" NavigateUrl="javascript:void(5)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 3" NavigateUrl="javascript:void(6)"></dx:NavBarItem>
-                </Items>
-            </dx:NavBarGroup>
-            <dx:NavBarGroup Text="Parent 4" HeaderImage-IconID="actions_driving_16x16devav">
-                <Items>
-                    <dx:NavBarItem Text="Child 1" NavigateUrl="javascript:void(4)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 2" NavigateUrl="javascript:void(5)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 3" NavigateUrl="javascript:void(6)"></dx:NavBarItem>
-                </Items>
-            </dx:NavBarGroup>
-            <dx:NavBarGroup Text="Parent 5" HeaderImage-IconID="actions_export_16x16devav">
-                <Items>
-                    <dx:NavBarItem Text="Child 1" NavigateUrl="javascript:void(4)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 2" NavigateUrl="javascript:void(5)"></dx:NavBarItem>
-                    <dx:NavBarItem Text="Child 3" NavigateUrl="javascript:void(6)"></dx:NavBarItem>
-                </Items>
-            </dx:NavBarGroup>
-
-        </Groups>
+        <!-- ... -->
         <Paddings Padding="0px" />
     </dx:ASPxNavBar>
 </ExpandedPanelTemplate>
 ```
+
+## Files to Review
+
+* [Default.aspx](./CS/WebApplication1/Default.aspx) (VB: [Default.aspx](./VB/WebApplication1/DefaultForm.aspx))
+* [Default.aspx.cs](./CS/WebApplication1/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebApplication1/DefaultForm.aspx.vb))
