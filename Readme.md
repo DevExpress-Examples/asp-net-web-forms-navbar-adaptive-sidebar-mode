@@ -11,7 +11,7 @@
 <!-- default file list end -->
 # How to implement Adaptive SideBar mode for Navigation Bar
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t499904/)**
+**[[Run Online]](https://codecentral.devexpress.com/128564500/)**
 <!-- run online end -->
 
 
