@@ -72,8 +72,8 @@ Specify the panel's [ExpandPanelTemplate](https://docs.devexpress.com/AspNet/Dev
 
 ## Files to Review
 
-* [Default.aspx](./CS/WebApplication1/Default.aspx) (VB: [Default.aspx](./VB/WebApplication1/DefaultForm.aspx))
-* [Default.aspx.cs](./CS/WebApplication1/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebApplication1/DefaultForm.aspx.vb))
+* [Default.aspx](./CS/WebApplication1/Default.aspx) (VB: [Default.aspx](./VB/WebApplication1/Default.aspx))
+* [Default.aspx.cs](./CS/WebApplication1/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebApplication1/Default.aspx.vb))
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
@@ -81,3 +81,4 @@ Specify the panel's [ExpandPanelTemplate](https://docs.devexpress.com/AspNet/Dev
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
